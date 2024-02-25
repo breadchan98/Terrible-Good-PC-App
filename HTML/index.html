@@ -1,3 +1,4 @@
+<!--The following comments are for notetaking-->
 <html>
     <body>
         <!--main tag for SEO accessibility-->
@@ -20,18 +21,20 @@
                 <li>Cluttered cable/lack of cable management</li>
                 <li>Unnecessary RGB Lighting</li>
                 <li>Incorrect RAM Placement</li>
-                <li>Expensive cooling with a cheap GPU/CPU</li>
+                <li>Expensive cooling with a cheap GPU/CPU, or vice versa</li>
                 <li>Giant PC Case with small components</li>
+                <li>Incorrect/Confusing PC Configuration, ex: <strong>"Ryzen 3 with a RTX 4080"</strong></li>
             </ul>
             <figure><!--Used to self contain, separated from main tag-->
             <img src="https://external-preview.redd.it/e7stsysrT_92uUTv4YYfRo1Vf1doYe8_99rgq5JzLps.jpg?width=640&crop=smart&auto=webp&s=4b25b47c130a367adf33013e53601be5ace4ea84" alt="cable bad">
             <figcaption>An example of <em>trash</em> cable management</figcaption>
             </figure>
-            <h3>Top 3 things to have good PC Build</h3>
+            <h3>Top 4 things to have good PC Build</h3>
             <ol>
                 <li>Focus on cable management, make it presentable</li>
                 <li>Dont block any fans with cluttered cable, <em>at least</em></li>
                 <li>Manage the RGB and components correctly</li>
+                <li>No bottleneck Configuration</li>
             </ol>
             <figure>
                 <img src="https://www.easypc.io/img/cable-management/good-cable-management.png"
@@ -45,7 +48,11 @@
             <!--Form tag= collecting information from users-->
             <!--action atr= where form data should be sent to, aka to submit.html-->
             <form action="/HTML/submit.html">
-
+            
+            <!--fieldset tag= group input and labels together in a block for web-->
+            <fieldset>
+                <!--legend tag= acts as a captionb for fieldset, adding context of the radio choices-->
+                <legend>Is the PC, non-RGB or RGB themed?</legend>
                 <!--input tag= no closing tag, collect data in web form-->
                 <!--type atr= determine what type of input it accepts-->
                 <!--name atr= used to reference for another location/url-->
@@ -53,9 +60,16 @@
                 <!--required atr (no value)= empty info cannot be submitted-->
                 <!--id atr= used to identify html elements-->
                 <!--two name atr on both labels to prevent both selecting-->
-                <label><input type="radio" id="rgb" name="either">RGB Themed</label>
-                <label><input type="radio" id="norgb"name="either">Non-RGB Themed</label>
-                
+                <label><input type="radio" value="rgb" id="rgb" name="either">RGB Themed</label>
+                <label><input type="radio" value="norgb" id="norgb"name="either">Non-RGB Themed</label>
+            </fieldset>
+            <fieldset>
+                <legend>Characteristics of the build?</legend>
+                <input type="checkbox" id="badcable" name="characteristic" value="badcable"> <label for="badcable">Bad cable management</label> 
+                <input type="checkbox" id="goodcable" name="characteristic" value="goodcable"> <label for="goodcable">Good cable management</label>
+                <input type="checkbox" id="badmix" name="characteristic" value="badmix"> <label for="badmix">GPU/CPU + Cooler Config Bad</label>
+                <input type="checkbox" id="goodmix" name="characteristic" value="goodmix"> <label for="goodmix">GPU/CPU + Cooler Config Good</label>
+            </fieldset>
                 <input type="text" name="pcbuild" placeholder="name of PC url" required>
                 
                 <!--button tag with no value will direct to form action tag-->
